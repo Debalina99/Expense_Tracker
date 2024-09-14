@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <td>${transaction.category}</td>
                 <td>${transaction.amount}</td>
                 <td>${transaction.type}</td>
-                <td><button class="delete-btn" data-index="${index}" onclick="removeTransaction(${index})">Delete</button></td>
+                <td><button class="delete-btn" data-index="${index}" >Delete</button></td>
             `;
 
             transactionHistory.appendChild(tr);
