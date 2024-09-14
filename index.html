@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
 </head>
 
 <body>
@@ -14,19 +14,19 @@
         <h1>Expense Tracker</h1>
         <div class="section">
             <h2>Income</h2>
-            <div class="groups">
-                <div class="input-group">
-                    <label for="income-amount">Total income amount:</label>
-                    <input type="number" id="income-amount" placeholder="e.g. 100000">
-                </div>
-                <div class="button-group">
-                    <button onclick="addIncome()">Add Income</button>
-                </div>
+
+            <div class="input-group">
+                <label for="income-amount">Total income amount:</label>
+                <input type="number" id="income-amount" placeholder="e.g. 100000">
             </div>
+            <div class="button-group">
+                <button onclick="addIncome()">Add Income</button>
+            </div>
+
         </div>
         <div class="section">
             <h2>Expenses</h2>
-            <div class="groups">
+            <form id="expense-form">
                 <div class="input-group">
                     <label for="expense-category">Category:</label>
                     <select id="expense-category">
@@ -37,14 +37,15 @@
                         <option value="Others">Others</option>
                     </select>
                 </div>
-            </div>
-            <div class="input-group">
-                <label for="expense-amount">Amount:</label>
-                <input type="number" id="expense-amount" placeholder="e.g. 50000">
-            </div>
-            <div class="button-group">
-                <button onclick="addExpense()">Add Expense</button>
-            </div>
+
+                <div class="input-group">
+                    <label for="expense-amount">Amount:</label>
+                    <input type="number" id="expense-amount" placeholder="e.g. 50000">
+                </div>
+                <div class="button-group">
+                    <button type="submit" onclick="addExpense()">Add Expense</button>
+                </div>
+            </form>
         </div>
         <div class="table-container">
             <h2>Transaction History</h2>
@@ -57,7 +58,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody id="transaction-history">
+                <tbody id="transaction-history" class="transaction-history">
                     <!-- Transactions will appear here -->
                 </tbody>
             </table>
@@ -71,3 +72,7 @@
         <div class="clear-button-group">
             <button onclick="clearAll()">Clear All</button>
         </div>
+    </div>
+</body>
+
+</html>
